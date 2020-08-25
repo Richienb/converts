@@ -19,7 +19,10 @@
 		"prepublishOnly": "tsc"
 	},
 	"keywords": [],
-	"dependencies": {},
+	"dependencies": {
+		"create-converter": "^1.1.1",
+		"decimal.js": "^10.2.0"
+	},
 	"devDependencies": {
 		"@richienb/tsconfig": "^0.1.1",
 		"ava": "^3.6.0",

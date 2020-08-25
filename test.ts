@@ -1,6 +1,6 @@
-import theModule from "./source"
-import test from "ava"
+import {temperature} from "./source"
+import test, {Assertions} from "ava"
 
-test("main", t => {
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test("main", (t: Assertions) => {
+	t.is(temperature.celsius.kelvin(22), 295.15)
 })
