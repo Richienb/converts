@@ -77,6 +77,22 @@ export const frequency = createConverter({
 	gigahertz: 1
 })
 
+export const fuelEconomy = createConverter({
+	milePerUSGallon: {
+		toBase: amount => amount.dividedBy(2.352),
+		fromBase: amount => amount.times(2.352)
+	},
+	milePerGallon: {
+		toBase: amount => amount.dividedBy(2.825),
+		fromBase: amount => amount.times(2.825)
+	},
+	kilometrePerLitre: true,
+	litrePer100Kilometres: {
+		toBase: amount => new Decimal(100).dividedBy(amount),
+		fromBase: amount => new Decimal(100).dividedBy(amount)
+	}
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
