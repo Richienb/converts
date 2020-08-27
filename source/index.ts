@@ -131,6 +131,14 @@ export const planeAngle = createConverter({
 	secondOfArc: 3600
 })
 
+export const pressure = createConverter({
+	bar: 1,
+	pascal: 1000000,
+	poundForcePerSquareInch: 14.504,
+	standardAtmosphere: dividedBy(1.013),
+	torr: 750
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
