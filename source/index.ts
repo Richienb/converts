@@ -93,6 +93,20 @@ export const fuelEconomy = createConverter({
 	}
 })
 
+export const length = createConverter({
+	kilometre: 1,
+	metre: 1000,
+	centimeter: 100000,
+	millimetre: 1e6,
+	micrometre: 1e9,
+	nanometre: 1e12,
+	mile: dividedBy(1.609),
+	yard: 1094,
+	foot: 3281,
+	inch: 39370,
+	nauticalMile: dividedBy(1.852)
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
