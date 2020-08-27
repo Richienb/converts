@@ -107,6 +107,19 @@ export const length = createConverter({
 	nauticalMile: dividedBy(1.852)
 })
 
+export const mass = createConverter({
+	tonne: 1,
+	kilogram: 1000,
+	gram: 1e6,
+	milligram: 1e9,
+	microgram: 1e12,
+	imperialTon: dividedBy(1.016),
+	usTon: 1.102,
+	stone: 157,
+	pound: 2205,
+	ounce: 35274
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
