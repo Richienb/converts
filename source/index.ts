@@ -70,6 +70,13 @@ export const energy = createConverter({
 	footPound: 2.655e6
 })
 
+export const frequency = createConverter({
+	hertz: 1e9,
+	kilohertz: 1e6,
+	megahertz: 1000,
+	gigahertz: 1
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
