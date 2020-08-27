@@ -5,6 +5,8 @@ import createConverter from "create-converter"
 
 const dividedBy = (amount: number) => new Decimal(1).dividedBy(amount)
 
+const pi = Decimal.acos(-1)
+
 export const area = createConverter({
 	squareKilometre: 1,
 	squareMetre: 1e6,
@@ -118,6 +120,15 @@ export const mass = createConverter({
 	stone: 157,
 	pound: 2205,
 	ounce: 35274
+})
+
+export const planeAngle = createConverter({
+	degree: 1,
+	gradian: new Decimal(200).dividedBy(180),
+	milliradian: pi.times(1000).dividedBy(180),
+	minuteOfArc: 60,
+	radian: pi.dividedBy(180),
+	secondOfArc: 3600
 })
 
 export const temperature = createConverter({
