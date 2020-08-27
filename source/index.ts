@@ -139,6 +139,14 @@ export const pressure = createConverter({
 	torr: 750
 })
 
+export const speed = createConverter({
+	milesPerHour: 2.237,
+	footPerSecond: 3.281,
+	metrePerSecond: 1,
+	kilometrePerHour: 3.6,
+	knot: 1.944
+})
+
 export const temperature = createConverter({
 	celsius: true,
 	fahrenheit: {
