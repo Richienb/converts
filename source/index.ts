@@ -3,12 +3,12 @@
 import Decimal from "decimal.js"
 import createConverter from "create-converter"
 
-const inverseDecimal = (amount: number) => new Decimal(1).dividedBy(amount)
+const dividedBy = (amount: number) => new Decimal(1).dividedBy(amount)
 
 export const area = createConverter({
 	squareKilometre: 1,
 	squareMetre: 1e6,
-	squareMile: inverseDecimal(2.59),
+	squareMile: dividedBy(2.59),
 	squareYard: 1.196e6,
 	squareFoot: 1.076e7,
 	squareInch: 1.55e9,
@@ -17,46 +17,58 @@ export const area = createConverter({
 })
 
 export const dataTransferRate = createConverter({
-	bitPerSecond: 1,
-	kilobitPerSecond: inverseDecimal(1000),
-	kilobytePerSecond: inverseDecimal(8000),
-	kibibitPerSecond: inverseDecimal(1024),
-	megabitPerSecond: inverseDecimal(1e6),
-	megabytePerSecond: inverseDecimal(8e6),
-	mebibitPerSecond: inverseDecimal(1.049e+6),
-	gigabitPerSecond: inverseDecimal(1e9),
-	gigabytePerSecond: inverseDecimal(8e9),
-	gibibitPerSecond: inverseDecimal(1.074e9),
-	terabitPerSecond: inverseDecimal(1e12),
-	terabytePerSecond: inverseDecimal(8e12),
-	tebibitPerSecond: inverseDecimal(1.1e12)
+	bitPerSecond: 8e12,
+	kilobitPerSecond: 8e9,
+	kilobytePerSecond: 1e9,
+	kibibitPerSecond: 7.812e9,
+	megabitPerSecond: 8e6,
+	megabytePerSecond: 1e6,
+	mebibitPerSecond: 7.629e6,
+	gigabitPerSecond: 8000,
+	gigabytePerSecond: 1000,
+	gibibitPerSecond: 7451,
+	terabitPerSecond: 8,
+	terabytePerSecond: 1,
+	tebibitPerSecond: 7.276
 })
 
 export const digitalStorage = createConverter({
-	bit: 1,
-	kilobit: inverseDecimal(1000),
-	kibibit: inverseDecimal(1024),
-	megabit: inverseDecimal(1e+6),
-	mebibit: inverseDecimal(1.049e6),
-	gigabit: inverseDecimal(1e9),
-	gibibit: inverseDecimal(1.074e9),
-	terabit: inverseDecimal(1e+12),
-	tebibit: inverseDecimal(1.1e12),
-	petabit: inverseDecimal(1e15),
-	pebibit: inverseDecimal(1.126e15),
-	byte: inverseDecimal(8),
-	kilobyte: inverseDecimal(8000),
-	kibibyte: inverseDecimal(8192),
-	megabyte: inverseDecimal(8e6),
-	mebibyte: inverseDecimal(8.389e6),
-	gigabyte: inverseDecimal(8e9),
-	gibibyte: inverseDecimal(8.59e9),
-	terabyte: inverseDecimal(8e12),
-	tebibyte: inverseDecimal(8.796e12),
-	petabyte: inverseDecimal(8e15),
-	pebibyte: inverseDecimal(9.007e15)
+	bit: 18e15,
+	kilobit: 8e12,
+	kibibit: 7.812e12,
+	megabit: 8e9,
+	mebibit: 7.629e9,
+	gigabit: 8e6,
+	gibibit: 7.451e6,
+	terabit: 8000,
+	tebibit: 7276,
+	petabit: 8,
+	pebibit: 7.105,
+	byte: 1e15,
+	kilobyte: 1e12,
+	kibibyte: 9.766e11,
+	megabyte: 1e9,
+	mebibyte: 9.537e8,
+	gigabyte: 1e6,
+	gibibyte: 931323,
+	terabyte: 1000,
+	tebibyte: 909,
+	petabyte: 1,
+	pebibyte: dividedBy(1.126)
 })
 
+export const energy = createConverter({
+	joule: 3.6e6,
+	kilojoule: 3600,
+	gramCalorie: 860421,
+	kilocalorie: 860,
+	wattHour: 1000,
+	kilowattHour: 1,
+	electronvolt: dividedBy(9.223e18),
+	britishThermalUnit: dividedBy(3412),
+	usTherm: dividedBy(29.3),
+	footPound: 2.655e6
+})
 
 export const temperature = createConverter({
 	celsius: true,
