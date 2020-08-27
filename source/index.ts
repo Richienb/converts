@@ -158,3 +158,18 @@ export const temperature = createConverter({
 		fromBase: amount => amount.add(273.15)
 	}
 })
+
+export const time = createConverter({
+	nanosecond: 6.048e14,
+	microsecond: 6.048e11,
+	millisecond: 6.048e8,
+	second: 604800,
+	minute: 10080,
+	hour: 168,
+	day: 7,
+	week: 1,
+	month: dividedBy(4.345),
+	calendarYear: dividedBy(52.143),
+	decade: dividedBy(521),
+	century: dividedBy(5214)
+})
